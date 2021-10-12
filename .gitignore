@@ -1,0 +1,7 @@
+.history
+/Customer-Api-Ktor/build/
+/Customer-Api-Ktor/gradle/
+/Customer-Api-Ktor/gradlew
+/Customer-Api-Ktor/.gradle/
+/Customer-Api-Ktor/.idea/
+
