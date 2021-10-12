@@ -1,0 +1,1 @@
+rootProject.name = "com.example.customer-api-ktor"
