@@ -1,8 +1,10 @@
 package com.example
-    
-import com.example.customer.models.Customer
-import com.example.customer.models.customerStorage
-import com.example.customer.models.routes.registerCustomerRoutes
+
+
+import com.example.customer.routes.registerCustomerRoutes
+import com.example.order.routes.getOrderDetailsById
+import com.example.order.routes.listOfOrderRoute
+import com.example.order.routes.registerOrderingRoutes
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.application.*
@@ -22,7 +24,7 @@ fun main() {
         }
 
 
-        // the code below is used to install the content negation to allow the server to examine the
+        // the code below is used to install the content negation to allow the server to examine to
         // accept header to see if the server can serve to the specific type of content or not
         install(ContentNegotiation){
             // the code below is used to enable the json feature of the content negotiation to let
@@ -46,6 +48,14 @@ fun main() {
 
         // calling the registerCustomerRoutes() method for getting access to all the customer routes
         registerCustomerRoutes()
+
+        // calling the registerOrderRoutes() method for getting access to all the order routes
+        registerOrderingRoutes()
+
+//        routing {
+////            getOrderDetailsById()
+//            listOfOrderRoute()
+//        }
 
     }.start(wait = true)
 }

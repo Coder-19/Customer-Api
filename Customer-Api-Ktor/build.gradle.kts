@@ -3,8 +3,10 @@ val kotlin_version: String by project
 val logback_version: String by project
 
 plugins {
-    application
-    kotlin("jvm") version "1.5.31"
+    application;
+    kotlin("jvm") version "1.5.31";
+    // the code below is used to add the dependency for json serialization
+    kotlin("plugin.serialization") version "1.5.31"
 }
 
 group = "com.example"
@@ -26,4 +28,6 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:$kotlin_version")
     implementation("io.ktor:ktor-serialization:1.6.4")
     implementation("io.ktor:ktor-server-test-host:1.6.4")
+    // the code below is used to add the dependency for json serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
 }
